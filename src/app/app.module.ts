@@ -17,8 +17,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { AuthGuard } from './_guards/index';
 import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { DiscCreateComponent } from 'app/dicussion/create/create.component';
-import {SelectModule} from 'ng2-select';
 import { Globals } from 'app/globals';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 /* import { AutoCompleteModule } from 'primeng/autocomplete'; */
 
@@ -35,11 +35,11 @@ import { Globals } from 'app/globals';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpModule, 
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    SelectModule
+    AutoCompleteModule
   ],
   providers: [
     AuthGuard,

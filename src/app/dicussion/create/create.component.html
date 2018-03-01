@@ -31,6 +31,17 @@
                                                       </div>
                                                 </div>
                                           </div>
+                                          <h3>Multiple</h3>
+                                          <span class="ui-fluid">
+                                              <p-autoComplete [(ngModel)]="countries" [suggestions]="filteredCountriesMultiple" (completeMethod)="filterCountryMultiple($event)" styleClass="wid100"
+                                                  [minLength]="1" placeholder="Countries" name="countries" field="name" [multiple]="true">
+                                              </p-autoComplete>
+                                          </span>
+                                          <ul>
+                                              <li *ngFor="let c of countries">{{c.code}}</li>
+                                          </ul>
+
+
 
                                           <div class="row">
                                                 <div class="col-md-12">

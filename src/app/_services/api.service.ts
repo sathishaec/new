@@ -13,7 +13,7 @@ import { Globals } from 'app/globals';
 @Injectable()
 export class ApiService {
     private tokenID = '$1$N5wpkeKt$5cUsiaPfX4r19jOdGHgLT1';
-    private apiUrl = "http://10.98.20.104/trackR";
+    private apiUrl = "http://192.168.64.2/trackR";
     private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
     constructor(private http: HttpClient, private globals: Globals) { }
     // MOCK DATA

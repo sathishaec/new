@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { countries_list } from 'app/interfaces';
 import { CountryService } from 'app/_services/api.service';
 import { NotificationsComponent } from 'app/notifications/notifications.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 
 @Component({
@@ -19,6 +20,48 @@ import { NotificationsComponent } from 'app/notifications/notifications.componen
 
 
 export class DiscCreateComponent implements OnInit {
+      country: any;
+
+    countries: any[];
+
+    filteredCountriesSingle: any[];
+
+    filteredCountriesMultiple: any[];
+
+    brands: string[] = ['Audi','BMW','Fiat','Ford','Honda','Jaguar','Mercedes','Renault','Volvo','VW'];
+
+    filteredBrands: any[];
+
+    brand: string;
+
+
+   
+
+    filterCountryMultiple(event) {
+        let query = event.query;
+        this.countryService.getCountries().then(countries => {
+            this.filteredCountriesMultiple = this.filterCountry(query, countries);
+        });
+    }
+
+    filterCountry(query, countries: any[]):any[] {
+        //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
+        let filtered : any[] = [];
+        for(let i = 0; i < countries.length; i++) {
+            let country = countries[i];
+            if(country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+                filtered.push(country);
+            }
+        }
+        return filtered;
+    }
+
+    
+
+
+
+
+
       model: any = {};
       public query = '';
       public user = ["Sathish Kumar", "AnandRaj Venkatesan", "Arunkumar", "Jaiganesh", "Logan", "John", "Prabha", "Shameem", "Syed"];
@@ -30,11 +73,13 @@ export class DiscCreateComponent implements OnInit {
       public elementRef;
       list: string[] = [];
       constructor(myElement: ElementRef,
+            private countryService: CountryService,
             private ApiService: ApiService,
             private notificationscomponent: NotificationsComponent) {
             this.elementRef = myElement;
       }
 
+     
       ngOnInit(): void {
             this.ApiService.getusers()
                   .subscribe(
