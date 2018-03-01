@@ -1,0 +1,79 @@
+
+.thread_list{
+    padding:0 15px;
+    list-style: none;
+    
+}
+.thread-list h4{
+    margin: 0;
+}
+.thread-list{
+    padding:0;
+    background: #fff;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 1px 5px 0px -1px #ddd;
+    display: inline-block;
+    width: 100%;
+}
+.thread-list li{
+    padding: 0;
+    counter-increment: item;
+    border-bottom: 1px solid #efefef;
+    
+}
+.thread-list li:last-child{
+    border-bottom:0;
+}
+.thread-list li:before {
+    margin-right: 10px;
+    content: counter(item);
+    background: #efefef;
+    border-radius: 100%;
+    color: #999;
+    width: 1.5em;
+    text-align: center;
+    left: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    height: 1.6em;
+  }
+.thread_title a{
+    color:#333;
+    display: block;
+    padding: 15px 50px;
+    
+    -webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+.thread_title a:hover{
+    color: #666;
+    background: #f2f2f2;
+}
+.thread_title {
+    
+    margin-left: 0px;
+}
+a.new-thread {
+    float: right;
+    padding: 8px  15px;
+    color:  #222;
+    background:  #fff;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 0px #ddd;
+}
+
+a.new-thread i {
+    margin-right: 7px;
+}
+span.thread_time {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    font-size: 12px;
+}
+span.thread_time i{
+    font-size: 16px;
+}

@@ -1,0 +1,77 @@
+<div class="main-content">
+      <div class="container-fluid">
+            <div class="row">
+                  <div class="col-md-12">
+                        <div class="card">
+                              <div class="card-header" data-background-color="green">
+                                    <h4 class="title">Create Dicussion </h4>
+                              </div>
+                              <div class="card-content">
+                                    <form name="discCreatForm" (ngSubmit)="discSubmit(f)" #f="ngForm" novalidate>
+                                          <div class="row">
+                                                <div class="col-md-12">
+                                                      <div class="form-group form-black label-floating is-empty">
+                                                            <label class="control-label">Dicussion Name</label>
+                                                            <input type="text" class="form-control" name="discName" [(ngModel)]="model.discName" #discName="ngModel" required>
+
+                                                      </div>
+                                                </div>
+
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-12">
+                                                      <div class="form-group">
+                                                            <div class="form-group form-black label-floating is-empty">
+                                                                  <label class="control-label">Desciption</label>
+                                                                  <textarea class="form-control" rows="10" name="discDesc" [(ngModel)]="model.discDesc" #discDesc="ngModel" required></textarea>
+                                                            </div>
+
+
+                                                      </div>
+                                                </div>
+                                          </div>
+
+                                          <div class="row">
+                                                <div class="col-md-12">
+                                                      <div class="form-group">
+                                                            <div class="form-group form-black label-floating is-empty">
+
+                                                                  <label for="members" class="control-label">Add Members</label>
+                                                                  <div class="multi-select-field input-field col s12">
+                                                                        <div *ngFor="let item of selected">
+                                                                              <div class="selected">
+                                                                                    <span>{{item.fname}}</span>
+                                                                                    <a (click)="remove(item)">x</a>
+                                                                              </div>
+                                                                        </div>
+                                                                        <input [ngClass]="{'red-border-class': members.errors}" id="members" type="text" name="members" class="form-control validate filter-input"
+                                                                              #members="ngModel" [(ngModel)]=query (keyup)=filter()
+                                                                              [ngModelOptions]="{standalone: true}">
+                                                                       
+                                                                  </div>
+                                                                  <div class="suggestions" *ngIf="filteredList.length > 0">
+                                                                        <ul>
+                                                                              <li *ngFor="let item of filteredList">
+                                                                                    <a (click)="select(item)">{{item}}</a>
+                                                                              </li>
+                                                                        </ul>
+                                                                  </div>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
+
+
+
+                                          <button type="submit" class="btn btn-success pull-left">Create</button>
+                                          <div class="clearfix"></div>
+                                    </form>
+                              </div>
+                        </div>
+                  </div>
+
+            </div>
+      </div>
+</div>

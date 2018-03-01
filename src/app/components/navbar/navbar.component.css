@@ -1,0 +1,8 @@
+.page-title{
+    font-size: 20px;
+    font-family: Montserrat;
+}
+.navbar.navbar-transparent{
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}

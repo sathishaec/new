@@ -1,0 +1,65 @@
+.selected{
+	border: solid #ccc 1px;
+    float: left;
+    margin: 20px 2px 0;
+    padding: 2px 15px;
+    border-radius: 20px;
+	background: #fefefe;
+	-webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+    font-size: 14px;
+}
+.selected:hover{
+	background: #efefef;
+}
+.selected a{
+	cursor: pointer;
+    font-weight: bold;
+    margin-left: 7px;
+    font-family: Montserrat;
+    color: #e3382f;
+    font-size: 14px;
+}
+.multi-select-field{
+	position: relative;
+}
+.suggestions ul{
+    height: auto;
+    max-height: 90px;
+	overflow-x: hidden;
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.suggestions ul li a{
+	display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+	white-space: nowrap;
+	-webkit-transition: all 0.5s; /* Safari */
+    transition: all 0.5s;
+}
+.suggestions ul li a:hover{
+	cursor: pointer;
+	background: #ccc;
+}

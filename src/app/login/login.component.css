@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
+
+.login_page{
+    background-image: url(/assets/images/ap_bg.jpg);    
+    background-size:cover;
+    width:100%;
+    height:100%;
+    position: absolute;
+}
+.login{
+    display: block;
+    font-family: Roboto;
+}
+
+.logo{
+    margin: 30px auto;
+    text-align: center;
+
+}
+.login_comp {margin-top: 30%;}
+
+
+.logo_img{
+    width:300px;
+}
+.l_u_icon{
+    width:20px;
+    height:auto;
+}
+.login_form input[type="text"],
+.login_form input[type="password"]{
+    padding: 10px;
+    height: 50px;
+}
+.login_form  .input-group-addon{
+    padding: 6px 15px;
+    background: #fff;
+    border:0px;
+}
+.login_form .input-group .form-control{
+    border-radius: 0px;
+    border:0px;
+    border-left:1px solid #eee;
+    box-shadow: none;
+    margin: 0;
+    background-color: #fff;
+}
+.form-control, .form-group .form-control{
+    background-image: none;
+}
+.form-group.is-focused .form-control {
+    outline: none;
+    background-image: linear-gradient(#36a643, #36a643), linear-gradient(#D2D2D2, #D2D2D2);
+    background-size: 100% 2px, 100% 1px;
+    box-shadow: none;
+    transition-duration: 0.3s;
+  }
+.login_form .input-group{
+    box-shadow:2px 2px 6px -3px #555;
+}
+.login_btn{
+    background: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #36a643;
+    padding: 12px 50px;
+    font-size: 16px;
+    border-radius: 0;
+    box-shadow:-1px 0px 8px -2px #36a643;
+
+}
