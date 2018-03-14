@@ -1,24 +1,65 @@
 <div class="main-content">
         <div class="container-fluid">
                 <div class="row">
-                        <div class="col-xs-12">
-                                <a [routerLink]="['/discussion/create']" class="new-thread">
-                                        <i class="material-icons">add_circle_outline</i>Create
-                                </a>
+                        <div class="col-md-8">
+
+                                <div class="card">
+                                        <div class="card-header" data-background-color="green">
+                                                <h4 class="title">Dev Team Discussion </h4>
+                                        </div>
+                                        <div class="card-content">
+                                                <form name="discCreatForm" (ngSubmit)="discSubmit(f)" #f="ngForm" novalidate>
+
+                                                        <div class="row">
+                                                                <div class="col-md-12">
+                                                                        <div class="form-group">
+                                                                                <div class="form-group form-black label-floating is-empty">
+                                                                                        <label class="control-label">Desciption</label>
+                                                                                        <textarea class="form-control" rows="5" name="discDesc" [(ngModel)]="model.discDesc" #discDesc="ngModel" required></textarea>
+                                                                                </div>
+
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+
+                                                        <button type="submit" class="btn btn-success pull-left">Add Post</button>
+                                                        <div class="clearfix"></div>
+                                                </form>
+                                        </div>
+                                </div>
+
+                                <div class="card">
+                                        <div class="card-content">
+                                        </div>
+                                </div>
                         </div>
-                </div>
-                <div class="row">
-                        <div class="col-xs-12">
-                                <ol class="thread-list">
-                                        <li class="col-sm-12" *ngFor="let board of boardDetail">
-                                                <div class="thread_title">
-                                                        <a [routerLink]="['/view-forum', board.id]">
-                                                                <h4>{{board.name}}</h4>
-                                                                <span class="thread_time"><i class="material-icons">timer</i> {{board.updatedat}}</span>        
-                                                        </a>
+
+                        <div class="col-md-4">
+                                <div class="card">
+                                        <div class="card-content">
+                                                <div class="row">
+                                                        <div class="col-xs-12">
+                                                                <p>
+                                                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+                                                                        text ever since the 1500s, when an unknown printer
+                                                                        took a galley of type and scrambled it to make a
+                                                                        type specimen book. It has survived not only five
+                                                                        centuries, but also the leap into electronic typesetting,
+                                                                        remaining essentially unchanged. It was popularised
+                                                                        in the 1960s with the release of Letraset sheets
+                                                                        containing Lorem Ipsum passages, and more recently
+                                                                        with desktop publishing software like Aldus PageMaker
+                                                                        including versions of
+                                                                        <a href="#">..... Read More </a>
+                                                                </p>
+
+                                                        </div>
                                                 </div>
-                                        </li>
-                                </ol>
+
+                                        </div>
+                                </div>
                         </div>
 
                 </div>
