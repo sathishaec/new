@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AlertService, ApiService,CountryService } from './_services/index';
 import { LoginComponent } from './login/index';
 import { DiscListComponent } from './dicussion/list/list.component';
+import { DiscDetailComponent } from './dicussion/detail/detail.component';
 import { DashboardComponent } from './dicussion/dashboard.component';
 
 import { IconsComponent } from './icons/icons.component';
@@ -18,7 +19,7 @@ import { AuthGuard } from './_guards/index';
 import { HomeLayoutComponent } from './layouts/home-layout.component';
 import { DiscCreateComponent } from 'app/dicussion/create/create.component';
 import { Globals } from 'app/globals';
-import { AutoCompleteModule } from 'primeng/autocomplete';
+import { AutoCompleteModule } from 'primeng/components/autocomplete/autocomplete';
 
 /* import { AutoCompleteModule } from 'primeng/autocomplete'; */
 
@@ -27,6 +28,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
   declarations: [ 
     AppComponent,
     DiscListComponent,
+    DiscDetailComponent,
     DiscCreateComponent,
     IconsComponent,
     NotificationsComponent,
@@ -51,4 +53,4 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

@@ -1,11 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
 .login_page{
-    background-image: url(/assets/images/ap_bg.jpg);    
+    /* background-image: url(/assets/images/ap_bg.jpg);     */
+    background-image: url(/assets/images/ap_bg3.jpg);    
     background-size:cover;
     width:100%;
     height:100%;
     position: absolute;
+}
+/* background: rgba(255,255,255,0.2);
+    padding: 20px 50px;
+    border-radius: 13px;
+    box-shadow: 1px 1px 12px -1px #333 */
+.login_page:before{
+    position: absolute;
+    content: '';
+    background: rgba(255,255,255,0.4);
+    width:100%;
+    height:100%;
+    left:0;
+    top: 0;
 }
 .login{
     display: block;
