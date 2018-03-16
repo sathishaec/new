@@ -12,12 +12,24 @@ import { RouterLink } from '@angular/router';
 export class DiscListComponent implements OnInit {
   boardList: Array<Board>;
 
-  constructor(  private ApiService: ApiService ) { }
- 
+  constructor(private ApiService: ApiService) { }
+
   ngOnInit() {
     this.boardList = this.ApiService.getThreads();
     console.log(this.boardList);
-   
+
+    this.ApiService.discussion()
+      .subscribe(
+      data => {
+        if (data.status == "201") {
+        } else {
+          console.log(data);
+        }
+      },
+      error => {
+
+      });
+
   }
 
 }

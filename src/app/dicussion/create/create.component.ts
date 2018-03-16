@@ -20,7 +20,7 @@ import { NotificationsComponent } from 'app/notifications/notifications.componen
 
 
 export class DiscCreateComponent implements OnInit {
-      
+
       model: any = {};
       public query = '';
       public user = ["Sathish Kumar", "AnandRaj Venkatesan", "Arunkumar", "Jaiganesh", "Logan", "John", "Prabha", "Shameem", "Syed"];
@@ -109,6 +109,8 @@ export class DiscCreateComponent implements OnInit {
       }
 
       discSubmit(value, valid) {
+            let userId = localStorage.getItem('userId');
+            this.selectedId.push(userId);
             if (this.model.discName === undefined ||
                   this.model.discName == null ||
                   this.model.discName == "" ||
@@ -118,17 +120,19 @@ export class DiscCreateComponent implements OnInit {
                   this.selectedId.length == 0) {
                   this.notificationscomponent.showNotification('top', 'right', "Please enter all fields", "danger");
             } else {
+                  console.log(this.selectedId.toString());
                   this.notificationscomponent.showNotification('top', 'right', "Data Submitted successfully!!!", "success");
-                  /* this.ApiService.discCreate(this.model.discName, this.model.discDesc, JSON.stringify(this.selectedId))
+                  this.ApiService.discCreate(this.model.discName, this.model.discDesc, this.selectedId.toString())
                         .subscribe(
                         data => {
                               if (data.status == "201") {
                               } else {
+                                    console.log(data);
                               }
                         },
                         error => {
 
-                        }); */
+                        });
             }
 
       }

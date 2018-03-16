@@ -12,7 +12,7 @@ import { Globals } from 'app/globals';
 
 @Injectable()
 export class ApiService {
-    private tokenID = '$1$N5wpkeKt$5cUsiaPfX4r19jOdGHgLT1';
+    private tokenID = '$1$PoTXgMdP$C0nkGQ6MM8oC2lfbx4CMl/';
     //private apiUrl = "http://192.168.64.2/trackR";
     private apiUrl = "http://10.98.20.104/trackR";
     
@@ -72,7 +72,7 @@ export class ApiService {
 
     }
 
-    dicsCreate() {
+   /*  dicsCreate() {
 
         // return this.http.post<any>('http://10.98.20.104/simple-codeigniter-rest-api-master/index.php/auth/login', { empid : "IN002", password: '123' },{headers: new HttpHeaders().set('Content-Type', 'application/json')}); 
         return this.http.post<any>(this.apiUrl + 'index.php/task/create', {
@@ -89,7 +89,7 @@ export class ApiService {
             scheduled_hours: "24"
         })
     }
-
+ */
     getusers() {
         let token = localStorage.getItem('userToken');
         let userId = localStorage.getItem('userId');
@@ -99,13 +99,26 @@ export class ApiService {
             });
     }
 
-    discCreate(name: string, desc: string, members: string) {
-        return this.http.post<any>(this.apiUrl + '/index.php/auth/login', {
-            name: name,
-            description: desc,
-            members: members,
-        }).map(user => {
-            return user;
+    discussion() {
+        let token = localStorage.getItem('userToken');
+        let userId = localStorage.getItem('userId');
+        return this.http.get<any>(this.apiUrl + '/index.php/discussion/list?token=' + token + '&uid=' + userId)
+            .map(user => {
+                return user;
+            });
+    }
+
+    discCreate(name: string, desc: string,  members: string) {
+        var userid = localStorage.getItem('userId');
+        var userToken = localStorage.getItem('userToken');        
+        return this.http.post<any>(this.apiUrl + '/index.php/discussion/create', {
+            topic_title: name,
+            topic_desc: desc,
+            uid: userid,
+            topic_access: members,
+            token:userToken
+        }).map(topic => {
+            return topic;
         });
 
     }
